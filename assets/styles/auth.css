@@ -1,0 +1,58 @@
+/* Form */
+label {
+	color: #fefefe;
+	margin-bottom: 10px;
+}
+.kellbmeg {
+	color: hsl(0, 80%, 60%);
+}
+.urlap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.auth-urlap {
+	padding: 20px 10px;
+	background-color: #7dbad7;
+	border-radius: 6px;
+}
+.auth-header {
+	color: #fefefe;
+	text-align: center;
+	font-size: larger;
+	font-style: oblique;
+	margin-bottom: 30px;
+}
+/* Form gombok */
+input:focus {
+	background-color: hsla(199, 100%, 40%, 1);
+	border: 2px solid #fefefe;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+input {
+	width: 250px;
+	padding: 10px;
+	margin: 15px 0;
+	font-size: 16px;
+	border-radius: 6px;
+	border-bottom: 2px solid hsla(199, 100%, 40%, 1);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	color: hsla(0, 0%, 100%, 1);
+	background: rgba(20, 20, 20, 0.2);
+	outline: none;
+}
+.auth-kuldes {
+	width: 100%;
+}
+.auth-kuldes:hover {
+	background-color: hsla(199, 100%, 40%, 1);
+}
+.auth-kuldes:active {
+	background-color: hsla(199, 100%, 60%, 1);
+	border-color: hsla(199, 100%, 60%, 1);
+}

@@ -1,0 +1,70 @@
+/* Avatar */
+.eloado-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+}
+.eloado-link {
+	font-weight: 800;
+	color: hsla(199, 100%, 60%, 1);
+	text-decoration: none;
+}
+.eloado-link:hover {
+	color: #6496ad;
+}
+/* Táblázat */
+table {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-collapse: collapse;
+	width: 30vw;
+	border-radius: 6px;
+	overflow: hidden;
+}
+th {
+	text-align: center;
+	background-color: #7dbad7;
+	color: #fefefe;
+}
+td {
+	font-weight: 600;
+	text-align: center;
+	color: #7dbad7;
+}
+th, td {
+	padding: 4px;
+}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+table.eloadok {
+	margin-top: 30px;
+	border: 2px solid #7dbad7;
+}
+table.eloadok td:hover {
+	background-color: #dddddd;
+}
+/* Oszlopok első, második, harmadik */
+.eloadok tr td:nth-child(1) {
+	width: 50px;
+}
+.eloadok tr td:nth-child(2) {
+	width: 400px;
+}
+.eloadok tr td:nth-child(3) {
+	width: 100px;
+	text-align: center;
+}
+/* Zoom animáció */
+td img {
+	width: 30%;
+  	transition: transform 1s, filter .5s ease-out;
+	filter: grayscale(100%);
+}
+
+td img:hover {
+	filter: grayscale(0);
+  	transform: scale(1.01);
+}
