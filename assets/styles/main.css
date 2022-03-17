@@ -99,6 +99,9 @@ nav .active:hover {
 	background-color: #6496ad;
 }
 /* Konténer (tartalom meg miegymás) */
+.kontener {
+	margin-bottom: 100px;
+}
 .kontener h1,
 .kontener p {
 	text-align: center;

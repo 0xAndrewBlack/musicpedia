@@ -36,12 +36,23 @@ function checkToken() {
 }
 // Check base64 encoding
 function isValidToken(token) {
-    if (token === '' || token.trim() === '') return false;
+	try {
+		if (token === '' || token.trim() === '') return false;
 
-    try {
+		const dToken = atob(token);
+		const valid = JSON.parse(localStorage.getItem('db')).some(d => d.mail == dToken);
+
+		if(!valid) {
+			throw new Error('🔒 - Token megmásítás!');
+		}
+
         return true;
     } catch (e) {
-        return false;
+		if (!e) {
+			return false;
+		}
+
+		console.log('🔒 - Token megmásítás!');
     }
 }
 // Destroy token

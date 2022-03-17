@@ -1,0 +1,11 @@
+/* Zoom animáció */
+td img {
+	width: 30%;
+  	transition: transform 1s, filter .5s ease-out;
+	filter: grayscale(100%);
+}
+
+td img:hover {
+	filter: grayscale(0);
+  	transform: scale(1.01);
+}

@@ -1,81 +1,89 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>Musicpedia</title>
-    <meta name="author" content="a gyász meg a szhenvedés"/>
-    <meta name="keywords" content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső"/>
-    <link rel="icon" href="./assets/resources/logo.png"/>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-	<link rel="stylesheet" href="./assets/styles/eloadok.css">
-</head>
-<body>
-	<!-- Menü -->
-	<nav class="navigacio">
-		<ul id="menu">
-			<li class="menuElemek"><img id="logo" src="./assets/resources/logo.png" height="60" draggable="false" /></li>
-			<li class="menuElemek"><a href="./index.html">Főoldal</a></li>
-			<li class="menuElemek"><a href="javascript:void(0);" class="active">Előadók</a></li>
-			<li class="menuElemek dropdown">
-				<a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-				<div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-			</li>
-		</ul>
-	</nav>
-	<!-- Minden szar -->
-	<main class="kontener">
-		<h1 class="header-eloadok">Előadók</h1>
-		<p>Jelenglegi elérhető előadóink.</p>
-		<div class="wrapper">
-			<table class="eloadok">
-				<tr>
-					<th>Kép</th>
-					<th>Előadó</th>
-					<th>Zenék száma</th>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/bittoduo.png"></td>
-					<td><a href="eloado_bittoduo.html" class="eloado-link">Bittoduo</a></td>
-					<td>12</td>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/dualipa.png"></td>
-					<td><a href="eloado_dualipa.html" class="eloado-link">Dua Lipa</a></td>
-					<td>30</td>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/drake.png"></td>
-					<td><a href="eloado_drake.html" class="eloado-link">Drake</a></td>
-					<td>139</td>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/rostas.png"></td>
-					<td><a href="eloado_rostas.html" class="eloado-link">Rostás Szabika</a></td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/mchawerestekno.png"></td>
-					<td><a href="eloado_mchet.html" class="eloado-link">MC Hawer & Teknő</a></td>
-					<td>32</td>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/notarmary.png"></td>
-					<td><a href="eloado_notar.html" class="eloado-link">Nótár Mary</a></td>
-					<td>32</td>
-				</tr>
-				<tr>
-					<td><img class="eloado-avatar" src="./assets/resources/eloadok/lljunior.png"></td>
-					<td><a href="eloado_lljunior.html" class="eloado-link">LL Junior</a></td>
-					<td>32</td>
-				</tr>
-			</table>
-		</div>
-	</main>
-	<!-- Lábjegyzet vagy mi -->
-	<footer>
-		<p>
-			Musicpedia &copy; 2022
-		</p>
-	</footer>
-	<!-- Szkriptek -->
-	<script src="./assets/scripts/auth.check.js" defer></script>
-</body>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Musicpedia</title>
+		<meta name="author" content="a gyász meg a szhenvedés" />
+		<meta
+			name="keywords"
+			content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső"
+		/>
+		<link rel="icon" href="./assets/resources/logo.png" />
+		<link rel="stylesheet" href="./assets/styles/main.css" />
+		<link rel="stylesheet" href="./assets/styles/eloadok.css" />
+		<link rel="stylesheet" href="./assets/styles/animaciok.css" />
+	</head>
+	<body>
+		<!-- Menü -->
+		<nav class="navigacio">
+			<ul id="menu">
+				<li class="menuElemek">
+					<img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false" />
+				</li>
+				<li class="menuElemek"><a href="./index.html">Főoldal</a></li>
+				<li class="menuElemek"><a href="javascript:void(0);" class="active">Előadók</a></li>
+				<li class="menuElemek dropdown">
+					<a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
+					<div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
+				</li>
+			</ul>
+		</nav>
+		<!-- Minden szar -->
+		<main class="kontener">
+			<h1 class="header-eloadok">Előadók</h1>
+			<p>Jelenglegi elérhető előadóink.</p>
+			<div class="wrapper">
+				<table class="eloadok">
+					<tr>
+						<th>Kép</th>
+						<th>Előadó</th>
+						<th>Zenék száma</th>
+					</tr>
+					<tr>
+						<td><img class="eloado-avatar" alt="Bitto Duo előadó avatár" src="./assets/resources/eloadok/bittoduo.png" /></td>
+						<td><a href="eloado_bittoduo.html" class="eloado-link">Bittoduo</a></td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td><img class="eloado-avatar" alt="Dua Lipa előadó avatár" src="./assets/resources/eloadok/dualipa.png" /></td>
+						<td><a href="eloado_dualipa.html" class="eloado-link">Dua Lipa</a></td>
+						<td>30</td>
+					</tr>
+					<tr>
+						<td><img class="eloado-avatar" alt="Drake előadó avatár" src="./assets/resources/eloadok/drake.png" /></td>
+						<td><a href="eloado_drake.html" class="eloado-link">Drake</a></td>
+						<td>139</td>
+					</tr>
+					<tr>
+						<td><img class="eloado-avatar" alt="Rostás Szabika előadó avatár" src="./assets/resources/eloadok/rostas.png" /></td>
+						<td><a href="eloado_rostas.html" class="eloado-link">Rostás Szabika</a></td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>
+							<img class="eloado-avatar" alt="Mc Hawer és Teknő előadó avatár" src="./assets/resources/eloadok/mchawerestekno.png" />
+						</td>
+						<td><a href="eloado_mchet.html" class="eloado-link">MC Hawer & Teknő</a></td>
+						<td>32</td>
+					</tr>
+					<tr>
+						<td><img class="eloado-avatar" alt="Notar Mary előadó avatár" src="./assets/resources/eloadok/notarmary.png" /></td>
+						<td><a href="eloado_notar.html" class="eloado-link">Nótár Mary</a></td>
+						<td>32</td>
+					</tr>
+					<tr>
+						<td><img class="eloado-avatar" alt="LL Junior előadó avatár" src="./assets/resources/eloadok/lljunior.png" /></td>
+						<td><a href="eloado_lljunior.html" class="eloado-link">LL Junior</a></td>
+						<td>32</td>
+					</tr>
+				</table>
+			</div>
+		</main>
+		<!-- Lábjegyzet vagy mi -->
+		<footer>
+			<p>Musicpedia &copy; 2022</p>
+		</footer>
+		<!-- Szkriptek -->
+		<script src="./assets/scripts/auth.check.js" defer></script>
+	</body>
+</html>

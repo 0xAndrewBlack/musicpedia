@@ -1,48 +1,55 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>Musicpedia</title>
-    <meta name="author" content="a gyász meg a szhenvedés"/>
-    <meta name="keywords" content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső"/>
-    <link rel="icon" href="./assets/resources/logo.png"/>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-	<link rel="stylesheet" href="./assets/styles/auth.css">
-</head>
-<body>
-	<!-- Menü -->
-	<nav class="navigacio">
-		<ul id="menu">
-			<li class="menuElemek"><img id="logo" src="./assets/resources/logo.png" height="60" draggable="false" /></li>
-			<li class="menuElemek"><a href="./index.html">Főoldal</a></li>
-			<li class="menuElemek"><a href="./eloadok.html">Előadók</a></li>
-			<li class="menuElemek dropdown">
-				<a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-				<div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-			</li>
-		</ul>
-	</nav>
-	<!-- Minden -->
-	<main class="kontener">
-		<div class="urlap">
-		<form class="auth-urlap" name="bejelentkezes" autocomplete="off">
-			<p class="auth-header">Bejelentkezés</p>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Musicpedia</title>
+		<meta name="author" content="a gyász meg a szhenvedés" />
+		<meta
+			name="keywords"
+			content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső"
+		/>
+		<link rel="icon" href="./assets/resources/logo.png" />
+		<link rel="stylesheet" href="./assets/styles/main.css" />
+		<link rel="stylesheet" href="./assets/styles/auth.css" />
+		<link rel="stylesheet" href="./assets/styles/animaciok.css" />
+	</head>
+	<body>
+		<!-- Menü -->
+		<nav class="navigacio">
+			<ul id="menu">
+				<li class="menuElemek">
+					<img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false" />
+				</li>
+				<li class="menuElemek"><a href="./index.html">Főoldal</a></li>
+				<li class="menuElemek"><a href="./eloadok.html">Előadók</a></li>
+				<li class="menuElemek dropdown">
+					<a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
+					<div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
+				</li>
+			</ul>
+		</nav>
+		<!-- Minden -->
+		<main class="kontener">
+			<div class="urlap">
+				<form class="auth-urlap" name="bejelentkezes" autocomplete="off">
+					<p class="auth-header">Bejelentkezés</p>
 
-			<label for="mail">E-Mail cím <span class="kellbmeg">*</span></label><br/>
-			<input type="email" name="mail" id="mail" required><br/>
+					<label for="mail">E-Mail cím <span class="kellbmeg">*</span></label> <br />
+					<input type="email" name="mail" id="mail" required /><br />
 
-			<label for="password">Jelszó <span class="kellbmeg">*</span></label><br/>
-			<input type="password" name="password" id="password" minlength="8" maxlength="32" required><br/>
+					<label for="password">Jelszó <span class="kellbmeg">*</span></label> <br />
+					<input type="password" name="password" id="password" minlength="8" maxlength="32" required /> <br />
 
-			<input type="submit" class="auth-kuldes" onclick="login(event)" value="Bejelentkezés">
-		</form></div>
-	</main>
-	<!-- Lábjegyzet vagy mi -->
-	<footer>
-		<p>
-			Musicpedia &copy; 2022
-		</p>
-	</footer>
-	<!-- Szkriptek -->
-	<script src="./assets/scripts/auth.js" defer></script>
-	<script src="./assets/scripts/auth.check.js" defer></script>
-</body>
+					<input type="submit" class="auth-kuldes" onclick="login(event)" value="Bejelentkezés" />
+				</form>
+			</div>
+		</main>
+		<!-- Lábjegyzet vagy mi -->
+		<footer>
+			<p>Musicpedia &copy; 2022</p>
+		</footer>
+		<!-- Szkriptek -->
+		<script src="./assets/scripts/auth.js" defer></script>
+		<script src="./assets/scripts/auth.check.js" defer></script>
+	</body>
+</html>
