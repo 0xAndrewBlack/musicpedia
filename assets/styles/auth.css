@@ -56,3 +56,11 @@ input {
 	background-color: hsla(199, 100%, 60%, 1);
 	border-color: hsla(199, 100%, 60%, 1);
 }
+/* Reszponzív bigyó */
+
+/* 800px-nél kissebb képernyőn lép életbe */
+@media screen and (max-width: 800px) {
+	.urlap {
+		margin-top: 10vh;
+	}
+}

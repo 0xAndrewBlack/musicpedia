@@ -57,3 +57,18 @@ table.eloadok td:hover {
 	width: 100px;
 	text-align: center;
 }
+/* Reszponzív bigyó */
+
+/* 800px-nél kissebb képernyőn lép életbe */
+@media screen and (max-width: 800px) {
+	table {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+		border-collapse: collapse;
+		width: 80vw;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+}
