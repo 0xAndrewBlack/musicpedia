@@ -1,7 +1,7 @@
 /* Form */
 label {
 	color: #fefefe;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .kellbmeg {
 	color: hsl(0, 80%, 60%);
@@ -22,7 +22,20 @@ label {
 	text-align: center;
 	font-size: larger;
 	font-style: oblique;
-	margin-bottom: 30px;
+	margin: 4px;
+}
+/* Csoportosítás */
+fieldset {
+	border: 2px solid hsla(199, 100%, 40%, 1);
+	margin-bottom: 10px;
+	border-radius: 6px;
+}
+legend {
+	color: #FFF;
+	background: hsla(199, 100%, 40%, 1);
+	border-radius: 6px;
+	font-size: 1em;
+	padding: 4px;
 }
 /* Form gombok */
 input:focus {
@@ -33,9 +46,9 @@ input:focus {
 	border-right: none;
 }
 input {
-	width: 250px;
-	padding: 10px;
-	margin: 15px 0;
+	width: 20vw;
+	padding: 5px;
+	margin: 10px 0;
 	font-size: 16px;
 	border-radius: 6px;
 	border-bottom: 2px solid hsla(199, 100%, 40%, 1);
@@ -46,8 +59,32 @@ input {
 	background: rgba(20, 20, 20, 0.2);
 	outline: none;
 }
-.auth-kuldes {
-	width: 100%;
+.btn-group, .input-group {
+	text-align: center;
+}
+.btn-group input {
+	width: 45%;
+}
+.auth-reset, input[type="reset"] {
+	display: inline-block;
+	border-bottom: 2px solid hsla(2, 100%, 40%, 1);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.auth-reset:hover {
+	background-color: hsla(2, 100%, 40%,0.8);
+	border-bottom: 2px solid hsla(2, 100%, 40%, 1);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.auth-reset:active {
+	background-color: hsla(2, 100%, 60%, 1);
+	border-color: hsla(2, 100%, 60%, 1);
+}
+.auth-kuldes, input[type="submit"] {
+	display: inline-block;
 }
 .auth-kuldes:hover {
 	background-color: hsla(199, 100%, 40%, 1);
@@ -61,6 +98,17 @@ input {
 /* 800px-nél kissebb képernyőn lép életbe */
 @media screen and (max-width: 800px) {
 	.urlap {
-		margin-top: 10vh;
+		margin-top: 20vh;
+		margin-bottom: 100vh;
+		width: 80%;
+	}
+	fieldset input {
+		width: 95%;
+	}
+	.btn-group input {
+		width: 100%;
+	}
+	input {
+		width: 80%;
 	}
 }

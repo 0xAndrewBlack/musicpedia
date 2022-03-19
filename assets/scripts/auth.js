@@ -62,7 +62,11 @@ function register(e) {
 	const password = document.querySelector('#password').value;
 	const confirmpassword = document.querySelector('#confirmpassword').value;
 
-	if (!email || !password || !confirmpassword) return;
+	const keresztNev = document.querySelector('#keresztnev').value;
+	const vezetekNev = document.querySelector('#vezeteknev').value;
+	const szulDatum = document.querySelector('#szuldatum').value;
+
+	if (!email || !password || !confirmpassword || !keresztNev || !vezetekNev) return;
 
 	let database = JSON.parse(localStorage.getItem('db'));
     const user = JSON.parse(localStorage.getItem('db')).some(data => data.mail.toLowerCase() == email.toLowerCase());
@@ -80,6 +84,11 @@ function register(e) {
 	const userObj = {
 		mail: email,
 		password: hashedPassword,
+		name: {
+			firstname: keresztNev,
+			lastname: vezetekNev,
+		},
+		birth: szulDatum ? szulDatum : null,
 	};
 	database.push(userObj);
 

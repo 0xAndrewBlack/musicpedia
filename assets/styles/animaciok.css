@@ -1,3 +1,16 @@
+/* Maga a fade animáció */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/* Fő tartalom animáció */
+.kontener * {
+	animation: fadein 1.5s;
+}
+/* Navigáció */
+nav {
+	animation: fadein 0.5s;
+}
 /* Zoom animáció */
 td img {
 	width: 30%;
@@ -7,5 +20,5 @@ td img {
 
 td img:hover {
 	filter: grayscale(0);
-  	transform: scale(1.01);
+  	transform: scale(1.02);
 }

@@ -8,7 +8,7 @@ function check() {
 		document.querySelector('.dropdown-content').insertAdjacentHTML('beforeend', '<a href="./login.html">bejelentkezés</a><a href="./register.html">regisztráció</a>');
 		return;
 	}
-	document.querySelector('.dropdown-content').insertAdjacentHTML('beforeend', '<a href="#">szerkesztés</a><a href="#">kedvenceim</a><a href="javascript:void(0);" onclick="logout()">kijelentkezés</a>');
+	document.querySelector('.dropdown-content').insertAdjacentHTML('beforeend', '<a href="javascript:void(0);">szerkesztés</a><a href="javascript:void(0);">kedvenceim</a><a href="javascript:void(0);" onclick="logout()">kijelentkezés</a>');
 
 	const url = location.pathname;
 	const filename = url.substring(url.lastIndexOf('/')+1)
