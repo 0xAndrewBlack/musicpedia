@@ -1,16 +1,9 @@
 /* Maga a fade animáció */
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
-/* Fő tartalom animáció */
-.kontener * {
-	animation: fadein 1.5s;
-}
-/* Navigáció */
-nav {
-	animation: fadein 0.5s;
-}
+
 /* Zoom animáció */
 td img {
 	width: 30%;

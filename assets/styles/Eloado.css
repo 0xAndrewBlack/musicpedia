@@ -1,0 +1,70 @@
+h2 {
+    font: bold 40px "Century Gothic";
+    color: #424242;
+    margin-left: 1%;
+}
+
+img {
+    margin-left: 1%;
+    margin-right: 3%;
+    float: left;
+    border-radius: 50%;
+}
+#leiras::first-letter { font-size: 120%;}
+h2::first-line{letter-spacing: 4px;}
+#leiras {
+    margin-top: 3%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    font: 16px "Century Gothic";
+    color: #424242;
+    text-align: justify;
+    max-width: 1500px;
+}
+
+/*zeneszámok*/
+.collapsible {
+    background-color: #fafafa;
+    font: 16px "Century Gothic";
+    color: #000000;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    clear: right;
+}
+
+.active, .collapsible:hover {
+    background-color: #84a6b6;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #383838;
+    font: 16px "Calibri Light";
+    color: #c6ced3;
+    text-align: justify;
+}
+
+pre {
+    float: left;
+}
+
+.video, audio {
+    margin-top: 5%;
+    margin-left: 1%;
+    width:560px;
+    height:315px;
+    border: 0px;
+}
+video {
+    margin-top: 50px;
+    margin-left: 2%;
+}
+
