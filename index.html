@@ -1,36 +1,85 @@
 <!DOCTYPE html>
 <html lang="hu">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Musicpedia</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="a gyász meg a szhenvedés" />
-		<meta name="keywords" content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső" />
-		<link rel="icon" href="./assets/resources/logo.png" />
-		<link rel="stylesheet" href="./assets/styles/main.css" />
-		<link rel="stylesheet" href="./assets/styles/animaciok.css" />
-	</head>
-	<body>
-		<!-- menu -->
-		<nav class="navigacio">
-			<ul id="menu">
-				<li class="menuElemek">
-					<img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false" />
-				</li>
-				<li class="menuElemek"><a href="javascript:void(0);" class="active">Főoldal</a></li>
-				<li class="menuElemek"><a href="eloadok.html">Előadók</a></li>
-				<li class="menuElemek dropdown">
-					<a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-					<div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-				</li>
-			</ul>
-		</nav>
-		<!-- Lábjegyzet vagy mi -->
-		<footer>
-			<p>Musicpedia &copy; 2022</p>
-		</footer>
-		<!-- Szkriptek -->
-		<script src="./assets/scripts/auth.check.js" defer></script>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Musicpedia</title>
+    <meta name="author" content="a gyász meg a szhenvedés"/>
+    <meta name="keywords" content="Musicpedia, zene, dalszöveg, lyrics, video, zenés video"/>
+    <link rel="icon" href="assets/resources/logo.png"/>
+    <link rel="stylesheet" href="assets/styles/index.css"/>
+    <link rel="stylesheet" href="./assets/styles/main.css"/>
+    <link rel="stylesheet" href="./assets/styles/animaciok.css"/>
+</head>
+<body>
+<!-- Menü -->
+<nav class="navigacio">
+    <ul id="menu">
+        <li class="menuElemek">
+            <img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false"/>
+        </li>
+        <li class="menuElemek"><a href="./index.html" class="active">Főoldal</a></li>
+        <li class="menuElemek"><a href="./eloadok.html">Előadók</a></li>
+        <li class="menuElemek dropdown">
+            <a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
+            <div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
+        </li>
+    </ul>
+</nav>
+<!--home-->
+<main class="kontener">
+    <ul id="welcome">
+        <li><img id="slogen" alt="slogen" src="./assets/resources/logoesnev.png"/></li>
+    </ul>
+
+    <table>
+        <caption>WEEKLY TOP5 LEGHOTTABB ZENE</caption>
+        <tr>
+            <th>No.</th>
+            <th>ELŐADÓ</th>
+            <th>ZENESZÁM</th>
+        </tr>
+        <tr>
+            <td>#1</td>
+            <td>BITTÓ DUÓ</td>
+            <td>HAJNALBA MEGYEK MEGINT HAZA</td>
+        </tr>
+        <tr>
+            <td>#2</td>
+            <td>Rostás Szabika</td>
+            <td>Nincs már divatban</td>
+        </tr>
+        <tr>
+            <td>#3</td>
+            <td>Drake</td>
+            <td>God's Plan</td>
+        </tr>
+        <tr>
+            <td>#4</td>
+            <td>MC Hawer & Tekknő</td>
+            <td>Bye Bye lány</td>
+        </tr>
+        <tr>
+            <td>#5</td>
+            <td>Dua Lipa</td>
+            <td>Break My Heart</td>
+        </tr>
+    </table>
+
+    <div class="flex-container">
+        <div><img alt="rostas" class="miniz" src="./assets/resources/eloadok/rostas.png"></div>
+        <div><img alt="bittoduo" class="miniz" src="./assets/resources/eloadok/bittoduo0.jpg"></div>
+        <div><img alt="dualipa" class="miniz" src="./assets/resources/eloadok/dualipa0.jpg"></div>
+        <div><img alt="mchawerestekkno" class="miniz" src="./assets/resources/eloadok/mchawerestekno0.jpg"></div>
+        <div><img alt="drake" class="miniz" src="./assets/resources/eloadok/drake0.jpg"></div>
+    </div>
+</main>
+
+<!-- Lábjegyzet vagy mi -->
+<footer>
+    <p>Musicpedia &copy; 2022</p>
+</footer>
+<!-- Szkriptek -->
+<script src="./assets/scripts/auth.check.js" defer></script>
+
+</body>
 </html>
