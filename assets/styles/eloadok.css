@@ -12,6 +12,9 @@
 .eloado-link:hover {
 	color: #6496ad;
 }
+.header-eloadok {
+	margin-top: 5%;
+}
 /* Táblázat */
 table {
 	position: absolute;
