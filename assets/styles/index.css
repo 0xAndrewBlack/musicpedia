@@ -11,7 +11,7 @@
 
 #welcome * {
     list-style-type: none;
-    animation: fadein 3s;
+    animation: fadeout 3s;
     animation-timing-function: ease-in;
     animation-delay: 10s;
     animation-iteration-count: 1;
@@ -23,7 +23,7 @@
     box-shadow: 0px 15px 10px -15px #BC70A4;
     width: 100%;
     margin: 0px;
-    animation: fadein 3s;
+    animation: fadeout 3s;
     animation-timing-function: ease-in;
     animation-delay: 10s;
     animation-iteration-count: 1;
