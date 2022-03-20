@@ -38,7 +38,7 @@
 table {
     position: relative;
     border: 2px #BC70A4;
-    top: -20%;
+    top: -40%;
     width: 60%;
     margin: auto;
     margin-bottom: 50px;
@@ -86,15 +86,14 @@ tr:nth-of-type(odd) {
 }
 
 .flex-container > div {
-    width: 100px;
+    width: 30%;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
 }
 .miniz{
     transform: scale(0.5, 0.5);
-    width: 200px;
-    height: 200px;
+    width: 100%;
     position: relative;
     top: -200px;
     z-index: -1;
