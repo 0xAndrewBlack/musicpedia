@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu">
 	<head>
-		<meta charset="UTF-8" />
-		<title>Musicpedia</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="a gyász meg a szhenvedés" />
-		<meta name="keywords" content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső" />
-		<link rel="icon" href="./assets/resources/logo.png" />
-		<link rel="stylesheet" href="./assets/styles/main.css" />
-		<link rel="stylesheet" href="./assets/styles/auth.css" />
-		<link rel="stylesheet" href="./assets/styles/animaciok.css" />
+		<?php include './includes/head_auth.php'; ?>
 	</head>
 	<body>
 		<!-- Menü -->
@@ -48,11 +39,8 @@
 			</div>
 		</main>
 		<!-- Lábjegyzet vagy mi -->
-		<footer>
-			<p>Musicpedia &copy; 2022</p>
-		</footer>
+		<?php include './includes/footer.php'; ?>
 		<!-- Szkriptek -->
-		<script src="./assets/scripts/auth.js" defer></script>
-		<script src="./assets/scripts/auth.check.js" defer></script>
+		<?php include './includes/scripts_auth.php'; ?>
 	</body>
 </html>
