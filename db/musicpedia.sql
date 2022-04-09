@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 02:24 AM
+-- Generation Time: Apr 09, 2022 at 01:45 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,11 +20,15 @@ SET time_zone = "+00:00";
 --
 -- Database: `musicpedia`
 --
+CREATE DATABASE IF NOT EXISTS `musicpedia` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+USE `musicpedia`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `messages`
+--
+-- Creation: Apr 09, 2022 at 11:28 AM
 --
 
 CREATE TABLE `messages` (
@@ -34,6 +38,10 @@ CREATE TABLE `messages` (
   `recipient` int(11) NOT NULL COMMENT 'recipient',
   `message` text COLLATE utf8_hungarian_ci NOT NULL COMMENT 'message'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- RELATIONSHIPS FOR TABLE `messages`:
+--
 
 --
 -- Dumping data for table `messages`
@@ -47,9 +55,12 @@ INSERT INTO `messages` (`id`, `time`, `sender`, `recipient`, `message`) VALUES
 --
 -- Table structure for table `users`
 --
+-- Creation: Apr 09, 2022 at 11:43 AM
+-- Last update: Apr 09, 2022 at 11:43 AM
+--
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL COMMENT 'userId',
+  `id` int(11) NOT NULL,
   `registration_date` datetime NOT NULL COMMENT 'registration date',
   `email` varchar(64) COLLATE utf8_hungarian_ci NOT NULL COMMENT 'email address',
   `password` varchar(256) COLLATE utf8_hungarian_ci NOT NULL COMMENT 'hashed password',
@@ -62,13 +73,17 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
+-- RELATIONSHIPS FOR TABLE `users`:
+--
+
+--
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `registration_date`, `email`, `password`, `about`, `pfp`, `firstname`, `lastname`, `birthdate`, `priviliege_level`) VALUES
-(0, '2022-04-09 01:58:00', 'admin@musicpedia.hu', '$2y$10$.AI82ZlCBaKVDiXwj/AGHecs9CD1XLaMLGHacUDpmhGFZ3f/WGZuC', 'Hello Musicpedia!', 'default.png', 'Admin', 'Fiók', '2070-04-01', 10),
-(2, '2022-04-09 01:56:53', 'test@example.com', '$2y$10$lTK3MGAbbcl1phwNz7CQVeb5CDt6IC83NF8i89xan5DegChwUnsNq', 'Hello Musicpedia!', 'default.png', 'Teszt', 'Elek', '2002-04-01', 0),
-(1, '2022-04-09 01:57:35', 'user@musicpedia.hu', '$2y$10$Vc2ymDzvEnydA7BblRRtc.Dvjk7El59qPsuXp5MWTfThTbyFtd1ka', 'Hello Musicpedia!', 'default.png', 'Alap', 'Felhasználó', '2001-04-01', 0);
+(0, '2022-04-09 13:40:35', 'admin@musicpedia.hu', '$2y$10$YVdhcB51lskhybSvIEx.NuxT/kn.oqUai2gh0sGXy3oBys4aQtUHu', 'Hello Musicpedia!', 'default.png', 'Admin', 'Fiók', '2077-04-01', 10),
+(1, '2022-04-09 13:41:39', 'user@musicpedia.hu', '$2y$10$cv0q1/qJawjxIg7OFPo/7ugH3Unln2snnyscXgFSiBEX4sGKh0yuq', 'Hello Musicpedia!', 'default.png', 'Alap', 'Felhasználó', '2001-04-01', 0),
+(2, '2022-04-09 13:42:15', 'test@example.com', '$2y$10$p44lGEPEGXVQ0oQefUrjNu.eEwLqwUj/xc6FjiKFsgbCJg636wjN2', 'Hello Musicpedia!', 'default.png', 'Teszt', 'Elek', '2002-04-01', 0);
 
 --
 -- Indexes for dumped tables
@@ -85,8 +100,23 @@ ALTER TABLE `messages`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`email`),
-  ADD KEY `id` (`id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'message id', AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
