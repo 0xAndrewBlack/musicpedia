@@ -25,21 +25,21 @@ th, td {
 tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
-table.felhasznalok {
+table.admin {
 	margin-top: 30px;
 	border: 2px solid #7dbad7;
 }
-table.felhasznalok td:hover {
+table.admin td:hover {
 	background-color: #dddddd;
 }
 /* Oszlopok első, második, harmadik */
-.felhasznalok tr td:nth-child(1) {
+.admin tr td:nth-child(1) {
 	width: 50px;
 }
-.felhasznalok tr td:nth-child(2) {
+.admin tr td:nth-child(2) {
 	width: 400px;
 }
-.felhasznalok tr td:nth-child(3) {
+.admin tr td:nth-child(3) {
 	width: 100px;
 	text-align: center;
 }

@@ -13,26 +13,25 @@
 		<!-- Minden szar -->
 		<main class="kontener">
 			<header>
-				<h1 class="header-felhasznalok">Admin felület</h1>
-				<p>Statisztika az oldalról.</p>
+				<h1 class="header-felhasznalok">Felhasználók</h1>
+				<p>Jelenlegi felhasználók.</p>
 			</header>
 			<div class="wrapper">
-				<!-- Statisztikák -->
 				<?php
 					include("../includes/connection.php");
 
-					$sql = "SELECT ( SELECT COUNT(id) FROM users WHERE priviliege_level = 0 ) AS felhasznalok, ( SELECT COUNT(id) FROM messages ) AS uzenetek, ( SELECT COUNT(id) FROM users WHERE priviliege_level = 1 ) AS eloadok, ( SELECT COUNT(id) FROM users WHERE priviliege_level = 10 ) AS admins;";
+					$sql = "SELECT id, email, CONCAT(firstname, ' ', lastname) AS name, birthdate FROM users;";
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {
-						echo "<table class='admin'><tr><th>Felhasználók</th><th>Üzenetek</th><th>Előadók</th><th>Adminok</th></tr>";
+						echo "<table class='admin'><tr><th>ID</th><th>E-Mail</th><th>Name</th><th>Birthdate</th></tr>";
 
 						while($row = $result->fetch_assoc()) {
 							echo "<tr>
-								<td>" . $row["felhasznalok"] . "</td>
-								<td>" . $row["uzenetek"] . "</td>
-								<td>" . $row["eloadok"] . "</td>
-								<td>" . $row["admins"] . "</td>
+								<td>" . $row["id"] . "</td>
+								<td>" . $row["email"] . "</td>
+								<td>" . $row["name"] . "</td>
+								<td>" . $row["birthdate"] . "</td>
 								</tr>";
 						}
 
