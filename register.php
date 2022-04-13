@@ -1,3 +1,7 @@
+<?php
+	include './includes/check_auth.php';
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 	<head>
@@ -21,30 +25,43 @@
 						$password = $_POST["password"];
 						$password_confirm = $_POST["confirmpassword"];
 
-						$password_hashed = password_hash($password, PASSWORD_DEFAULT);
-						$regdate = date("Y-m-d H:i:s"); // 2022-04-08 16:12:36
+						if (!($email || $firstname || $lastname ||$birthdate)) {
+							echo '<div class="alert alert-warning">Üres mezők, töltsd ki a teljes űrlapot.</div>';
+							return;
+						}
 
-						if ($stmt = $conn->prepare('SELECT id, password FROM users WHERE email = ?')) {
-							$stmt->bind_param('s', $email);
-							$stmt->execute();
-							$stmt->store_result();
+						if ($password == $password_confirm) {
+							$password_hashed = password_hash($password, PASSWORD_DEFAULT);
+							$regdate = date("Y-m-d H:i:s"); // 2022-04-08 16:12:36
 
-							if ($stmt->num_rows > 0) {
-								echo 'User exists, please choose another!';
-							} else {
-								// Insert new account
-								if ($stmt = $conn->prepare("INSERT INTO users (registration_date, email, password, firstname, lastname, birthdate) VALUES (?, ?, ?, ?, ?, ?)")) {
-									$password = $password_hashed;
-									$stmt->bind_param("ssssss", $regdate, $email, $password, $firstname, $lastname, $birthdate);
-									$stmt->execute();
-									echo 'You have successfully registered, you can now login!';
+							if ($stmt = $conn->prepare('SELECT id, password FROM users WHERE email = ?')) {
+								$stmt->bind_param('s', $email);
+								$stmt->execute();
+								$stmt->store_result();
+
+								if ($stmt->num_rows > 0) {
+									echo '<div class="alert alert-warning">A felhasználó már létezik.</div>';
 								} else {
-									echo 'Could not prepare statement!';
+									// Insert new account
+									if ($stmt = $conn->prepare("INSERT INTO users (registration_date, email, password, firstname, lastname, birthdate) VALUES (?, ?, ?, ?, ?, ?)")) {
+										$stmt->bind_param("ssssss", $regdate, $email, $password_hashed, $firstname, $lastname, $birthdate);
+										$stmt->execute();
+
+										echo '<div class="alert alert-success">Sikeres regisztráció.</div>';
+
+										usleep(2000);
+										header("Location: login.php");
+									} else {
+										echo '<div class="alert alert-error">Sikertelen regisztráció, adatbázis kapcsolat hiba.</div>';
+									}
 								}
+
+								$stmt->close();
+							} else {
+								echo '<div class="alert alert-error">Sikertelen regisztráció, adatbázis kapcsolat hiba.</div>';
 							}
-							$stmt->close();
 						} else {
-							echo 'Could not prepare statement!';
+							echo '<div class="alert alert-warning">Jelszavak nem egyeznek!</div>';
 						}
 					}
 				?>

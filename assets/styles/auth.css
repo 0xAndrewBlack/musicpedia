@@ -6,6 +6,29 @@ label {
 .kellbmeg {
 	color: hsl(0, 80%, 60%);
 }
+.alert {
+	color: #fefefe;
+	border: 2px solid hsla(199, 100%, 40%, 0.8);
+	border-radius: 6px;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+}
+.alert-info {
+	border-color: hsla(199, 100%, 40%, 0.8);
+	background-color: #7dbad7;
+}
+.alert-success {
+	border-color: #09d113;
+	background-color: hsla(108, 92%, 43%, 0.8);
+}
+.alert-warning {
+	border-color: #d18b09;
+	background-color: hsla(36, 92%, 43%, 0.8);
+}
+.alert-error {
+	border-color: hsla(2, 100%, 40%,0.8);
+	background-color: hsla(2, 100%, 60%, 1);
+}
 .urlap {
 	position: absolute;
 	top: 50%;

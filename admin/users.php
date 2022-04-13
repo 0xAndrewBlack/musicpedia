@@ -20,18 +20,19 @@
 				<?php
 					include("../includes/connection.php");
 
-					$sql = "SELECT id, email, CONCAT(firstname, ' ', lastname) AS name, birthdate FROM users;";
+					$sql = "SELECT id, email, pfp, CONCAT(firstname, ' ', lastname) AS name, birthdate FROM users;";
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {
-						echo "<table class='admin'><tr><th>ID</th><th>E-Mail</th><th>Name</th><th>Birthdate</th></tr>";
+						echo "<table class='admin'><tr><th id='user-id'>ID</th><th id='user-pfp'>Profilkép</th><th id='user-email'>E-Mail</th><th id='user-name'>Name</th><th id='user-birthdate'>Birthdate</th></tr>";
 
 						while($row = $result->fetch_assoc()) {
 							echo "<tr>
-								<td>" . $row["id"] . "</td>
-								<td>" . $row["email"] . "</td>
-								<td>" . $row["name"] . "</td>
-								<td>" . $row["birthdate"] . "</td>
+								<td headers='user-id'>" . $row["id"] . "</td>
+								<td headers='user-pfp'><img class='felhasznalo-avatar' src='../assets/resources/user-pfps/" . $row["pfp"] . "' alt='felhasznalo profilkepe' /></td>
+								<td headers='user-email'>" . $row["email"] . "</td>
+								<td headers='user-name'>" . $row["name"] . "</td>
+								<td headers='user-birthdate'>" . $row["birthdate"] . "</td>
 								</tr>";
 						}
 

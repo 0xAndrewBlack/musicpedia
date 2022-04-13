@@ -1,3 +1,7 @@
+<?php
+	include './includes/check_auth.php';
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 	<head>
@@ -5,19 +9,7 @@
 	</head>
 	<body>
 		<!-- Menü -->
-		<nav class="navigacio">
-			<ul id="menu">
-				<li class="menuElemek">
-					<img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false" />
-				</li>
-				<li class="menuElemek"><a href="./index.html">Főoldal</a></li>
-				<li class="menuElemek"><a href="./eloadok.html">Előadók</a></li>
-				<li class="menuElemek dropdown">
-					<a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-					<div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-				</li>
-			</ul>
-		</nav>
+		<?php include './includes/navigation.php'; ?>
 		<!-- Minden -->
 		<main class="kontener">
 			<div class="urlap">
@@ -29,13 +21,13 @@
 
 						$password = $_POST["password"];
 
-						if ($stmt = $conn->prepare("SELECT id, password, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
+						if ($stmt = $conn->prepare("SELECT id, password, firstname, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
 							$stmt->bind_param('s', $email);
 							$stmt->execute();
 							$stmt->store_result();
 
 							if ($stmt->num_rows > 0) {
-								$stmt->bind_result($id, $password_stored, $name);
+								$stmt->bind_result($id, $password_stored, $firstname, $name);
 								$stmt->fetch();
 
 								if (password_verify($password, $password_stored)) {
@@ -43,20 +35,23 @@
 									session_start();
 
 									$_SESSION['loggedin'] = TRUE;
+									$_SESSION['firstname'] = $firstname;
 									$_SESSION['name'] = $name;
 									$_SESSION['id'] = $id;
 
 									setcookie(session_name(), session_id(), time()+$lifetime);
 									session_regenerate_id();
 
-									echo 'Welcome ' . $_SESSION['name'] . '!';
+									echo '<div class="alert alert-success">Sikeres bejelentkezés.</div>';
+									echo '<div class="alert alert-info">Üdv, ' . $_SESSION['firstname'] . '!' . '</div>';
+
+									usleep(2000);
+									header("Location: index.php");
 								} else {
-									// Incorrect password
-									echo 'Incorrect email and/or password!';
+									echo '<div class="alert alert-warning">Rossz jelszó!</div>';
 								}
 							} else {
-								// Incorrect username
-								echo 'Incorrect email and/or password!';
+								echo '<div class="alert alert-error">Hibás e-mail cím/jelszó páros!</div>';
 							}
 
 							$stmt->close();
