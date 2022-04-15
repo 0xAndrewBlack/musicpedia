@@ -21,13 +21,13 @@
 
 						$password = $_POST["password"];
 
-						if ($stmt = $conn->prepare("SELECT id, password, firstname, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
+                        if ($stmt = $conn->prepare("SELECT id, password, priviliege_level, firstname, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
 							$stmt->bind_param('s', $email);
 							$stmt->execute();
 							$stmt->store_result();
 
 							if ($stmt->num_rows > 0) {
-								$stmt->bind_result($id, $password_stored, $firstname, $name);
+								$stmt->bind_result($id, $password_stored, $privilege_level, $firstname, $name);
 								$stmt->fetch();
 
 								if (password_verify($password, $password_stored)) {
@@ -35,6 +35,7 @@
 									session_start();
 
 									$_SESSION['loggedin'] = TRUE;
+                                    $_SESSION['isadmin'] = $privilege_level  == 10;
 									$_SESSION['firstname'] = $firstname;
 									$_SESSION['name'] = $name;
 									$_SESSION['id'] = $id;

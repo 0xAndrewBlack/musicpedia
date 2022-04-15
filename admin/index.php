@@ -1,5 +1,6 @@
 <?php
 	include '../includes/check_auth.php';
+	include '../includes/check_privilege.php';
 ?>
 
 <!DOCTYPE html>

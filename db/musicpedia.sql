@@ -69,7 +69,7 @@ CREATE TABLE `users` (
   `firstname` text COLLATE utf8_hungarian_ci NOT NULL COMMENT 'keresztnév',
   `lastname` text COLLATE utf8_hungarian_ci NOT NULL COMMENT 'vezetéknév',
   `birthdate` date DEFAULT NULL COMMENT 'születési dátum',
-  `priviliege_level` int(11) NOT NULL DEFAULT 0 COMMENT 'jogosultsagi szint 0 user, 1 eloado, 10 admin'
+  `privilege_level` int(11) NOT NULL DEFAULT 0 COMMENT 'jogosultsagi szint 0 user, 1 eloado, 10 admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `registration_date`, `email`, `password`, `about`, `pfp`, `firstname`, `lastname`, `birthdate`, `priviliege_level`) VALUES
+INSERT INTO `users` (`id`, `registration_date`, `email`, `password`, `about`, `pfp`, `firstname`, `lastname`, `birthdate`, `privilege_level`) VALUES
 (0, '2022-04-09 13:40:35', 'admin@musicpedia.hu', '$2y$10$YVdhcB51lskhybSvIEx.NuxT/kn.oqUai2gh0sGXy3oBys4aQtUHu', 'Hello Musicpedia!', 'default.png', 'Admin', 'Fiók', '2077-04-01', 10),
 (1, '2022-04-09 13:41:39', 'user@musicpedia.hu', '$2y$10$cv0q1/qJawjxIg7OFPo/7ugH3Unln2snnyscXgFSiBEX4sGKh0yuq', 'Hello Musicpedia!', 'default.png', 'Alap', 'Felhasználó', '2001-04-01', 0),
 (2, '2022-04-09 13:42:15', 'test@example.com', '$2y$10$p44lGEPEGXVQ0oQefUrjNu.eEwLqwUj/xc6FjiKFsgbCJg636wjN2', 'Hello Musicpedia!', 'default.png', 'Teszt', 'Elek', '2002-04-01', 0);
