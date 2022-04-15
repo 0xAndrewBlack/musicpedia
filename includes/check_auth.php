@@ -4,6 +4,9 @@
 	session_start();
 
 	if(!isset($_SESSION['loggedin'])) {
+        if ((strpos($_SERVER['REQUEST_URI'], 'admin'))) {
+            header("location: ../login.php");
+        }
 		if (!(strpos($_SERVER['REQUEST_URI'], '/login.php'))) {
 			header("location: login.php");
 		}

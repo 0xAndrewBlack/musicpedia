@@ -29,7 +29,7 @@
 						while($row = $result->fetch_assoc()) {
 							echo "<tr>
 								<td headers='user-id'>" . $row["id"] . "</td>
-								<td headers='user-pfp'><img class='felhasznalo-avatar' src='../assets/resources/user-pfps/" . $row["pfp"] . "' alt='felhasznalo profilkepe' /></td>
+								<td headers='user-pfp'><img class='felhasznalo-avatar' src='../assets/public/user-pfps/" . $row["pfp"] . "' alt='felhasznalo profilkepe' /></td>
 								<td headers='user-email'>" . $row["email"] . "</td>
 								<td headers='user-name'>" . $row["name"] . "</td>
 								<td headers='user-birthdate'>" . $row["birthdate"] . "</td>
