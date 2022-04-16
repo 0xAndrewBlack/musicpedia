@@ -22,7 +22,7 @@
 				<?php
 					include("../includes/connection.php");
 
-					$sql = "SELECT ( SELECT COUNT(id) FROM users WHERE priviliege_level = 0 ) AS felhasznalok, ( SELECT COUNT(id) FROM messages ) AS uzenetek, ( SELECT COUNT(id) FROM users WHERE priviliege_level = 1 ) AS eloadok, ( SELECT COUNT(id) FROM users WHERE priviliege_level = 10 ) AS admins;";
+					$sql = "SELECT ( SELECT COUNT(id) FROM users WHERE privilege_level = 0 ) AS felhasznalok, ( SELECT COUNT(id) FROM messages ) AS uzenetek, ( SELECT COUNT(id) FROM users WHERE privilege_level = 1 ) AS eloadok, ( SELECT COUNT(id) FROM users WHERE privilege_level = 10 ) AS admins;";
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {

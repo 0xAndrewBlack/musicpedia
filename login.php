@@ -21,7 +21,7 @@
 
 						$password = $_POST["password"];
 
-                        if ($stmt = $conn->prepare("SELECT id, password, priviliege_level, firstname, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
+                        if ($stmt = $conn->prepare("SELECT id, password, privilege_level, firstname, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
 							$stmt->bind_param('s', $email);
 							$stmt->execute();
 							$stmt->store_result();

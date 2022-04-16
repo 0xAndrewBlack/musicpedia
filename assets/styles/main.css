@@ -14,6 +14,28 @@ body {
 	color: #fefefe;
 	background-color: hsla(199, 100%, 60%, 0.4);
 }
+.button {
+	position: absolute;
+	top: -20%;
+	width: 92%;
+	color: #fefefe;
+	border: 2px solid hsla(199, 100%, 40%, 0.8);
+	border-radius: 6px;
+	padding: 2px 15px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.button-info {
+	border-color: hsla(199, 100%, 40%, 0.8);
+	background-color: #7dbad7;
+}
+
+.button-info:hover {
+	border-color: hsla(199, 100%, 30%, 0.8);
+	background-color: #7dbae7;
+}
+
 /* Lábjegyzet */
 footer, .labjegyzet {
 	height: 50px;
@@ -109,6 +131,91 @@ nav .active:hover {
 
 div.wrapper {
 	overflow-x: auto;
+}
+.felhasznalo-avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+}
+/* Táblázat */
+table {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-collapse: collapse;
+	width: 30vw;
+	border-radius: 6px;
+	overflow: hidden;
+}
+table.messages {
+	top: 80%;
+}
+table.messages-showcase {
+	top: 50%;
+}
+th {
+	text-align: center;
+	background-color: #7dbad7;
+	color: #fefefe;
+}
+td {
+	font-weight: 600;
+	text-align: center;
+	color: #7dbad7;
+}
+th, td {
+	padding: 4px;
+}
+
+th a:link {
+	text-decoration: none;
+	color: #2d4d5b;
+}
+
+th a:visited {
+	color: #2d4d5b;
+}
+
+th a:hover, th a:focus {
+	color: #fefefe;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+table.admin {
+	margin-top: 30px;
+	border: 2px solid #7dbad7;
+}
+table td:hover {
+	background-color: #dddddd;
+}
+/* Oszlopok első, második, harmadik */
+.admin tr td:nth-child(1) {
+	width: 50px;
+}
+.admin tr td:nth-child(2) {
+	width: 400px;
+}
+.admin tr td:nth-child(3) {
+	width: 100px;
+	text-align: center;
+}
+/* Reszponzív bigyó */
+
+/* 800px-nél kissebb képernyőn lép életbe */
+@media screen and (max-width: 800px) {
+	table {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+		border-collapse: collapse;
+		width: 80vw;
+		border-radius: 6px;
+		overflow: hidden;
+	}
 }
 /* Nyomtatási kép */
 @page {
