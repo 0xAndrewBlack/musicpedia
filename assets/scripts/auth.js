@@ -1,4 +1,4 @@
-// DögKút Auth Rendszer v1.0
+// DögKút Auth Rendszer v2.0
 
 function checkDatabase() {
 	const db = localStorage.getItem('db');

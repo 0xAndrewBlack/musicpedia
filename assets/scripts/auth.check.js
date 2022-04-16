@@ -1,11 +1,11 @@
-// DögKút Check Rendszer v1.0
+// DögKút Check Rendszer v2.0
 
 // Account nav
 function check() {
 	const loggedIn = checkToken();
 
 	if(!loggedIn) {
-		document.querySelector('.dropdown-content').insertAdjacentHTML('beforeend', '<a href="./login.html">bejelentkezés</a><a href="./register.html">regisztráció</a>');
+		document.querySelector('.dropdown-content').insertAdjacentHTML('beforeend', '<a href="./login.php">bejelentkezés</a><a href="./register.php">regisztráció</a>');
 		return;
 	}
 	document.querySelector('.dropdown-content').insertAdjacentHTML('beforeend', '<a href="javascript:void(0);">szerkesztés</a><a href="javascript:void(0);">kedvenceim</a><a href="javascript:void(0);" onclick="logout()">kijelentkezés</a>');
@@ -13,8 +13,8 @@ function check() {
 	const url = location.pathname;
 	const filename = url.substring(url.lastIndexOf('/')+1)
 
-	if (filename == 'register.html' || filename == 'login.html') {
-		location.href = './index.html';
+	if (filename == 'register.php' || filename == 'login.php') {
+		location.href = './index.php';
 	}
 }
 // Check localStorage for existing token
