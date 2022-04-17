@@ -1,5 +1,5 @@
 <?php
-include_once "./classes/Felhasznalo.php";
+include_once "classes/Felhasznalo.php";
 include './includes/check_auth.php';
 
 $user = $_SESSION['user'];
@@ -16,57 +16,55 @@ $user = $_SESSION['user'];
 <?php include './includes/navigation.php'; ?>
 <!-- Minden szar -->
 <main class="kontener">
-    <h1><?php echo $user->getLastname(); ?> <?php echo $user->getFirstname(); ?></h1>
+    <h1><?php echo $user->getLastname(); ?><?php echo $user->getFirstname(); ?></h1>
 
     <img id="pfp" src="assets/public/user-pfps/<?php echo $user->getPfp(); ?>" alt="Profilkép">
 
 
     <div id="infos">
-    <table id="profile">
-        <tr>
-            <th>E-mail cím</th>
-            <td><?php echo $user->getEmail(); ?></td>
-        </tr>
-        <tr>
-            <th>Születési dátum</th>
-            <td><?php echo $user->getBirthdate(); ?></td>
-        </tr>
-        <tr>
-            <th>Regisztráció dátuma</th>
-            <td><?php echo $user->getRegDate(); ?></td>
-        </tr>
-        <tr>
-            <th>Magamról</th>
-            <td><?php echo $user->getAbout(); ?></td>
-        </tr>
-    </table>
-    <h3>Kedvenceim</h3>
+        <table id="profile">
+            <tr>
+                <th>E-mail cím</th>
+                <td><?php echo $user->getEmail(); ?></td>
+            </tr>
+            <tr>
+                <th>Születési dátum</th>
+                <td><?php echo $user->getBirthdate(); ?></td>
+            </tr>
+            <tr>
+                <th>Regisztráció dátuma</th>
+                <td><?php echo $user->getRegDate(); ?></td>
+            </tr>
+            <tr>
+                <th>Magamról</th>
+                <td><?php echo $user->getAbout(); ?></td>
+            </tr>
+        </table>
+        <h3>Kedvenceim</h3>
 
         <?php
         $idd = $user->getId();
         $sql = "SELECT favorites FROM users WHERE id='$idd';";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
+            echo "<table class='singers'><tr><th id='singer-name'>Előadó</th><th id='singer-pfp'>Kép</th></tr>";
             $row = $result->fetch_assoc();
             $kedvencek = $row["favorites"];
-
-            if ($kedvencek == null) {
-                return;
-            }
-
-            echo "<table class='singers'><tr><th id='singer-name'>Előadó</th><th id='singer-pfp'>Kép</th></tr>";
-
             $kedvencek_split = explode(",", $kedvencek);
             for ($i = 0; $i < count($kedvencek_split); $i++) {
-            $kep = $kedvencek_split[$i] . ".png";
-            echo "<tr>
+                if (strcmp($kedvencek_split[$i], NULL) == 0) {
+
+
+                } else {
+                    $kep = $kedvencek_split[$i] . ".png";
+                    echo "<tr>
                 <td headers='user-id'>" . $kedvencek_split[$i] . "</td>
                 <td headers='user-pfp'><img src='assets/resources/eloadok/" . $kep . "' alt='előadó profilkepe' /></td>
             </tr>";
+                }
             }
             echo "</table>";
         } else {
-        echo "null";
         }
         ?>
         <br>
@@ -74,7 +72,7 @@ $user = $_SESSION['user'];
         <br>
         <br>
         <br>
-        </div>
+    </div>
 
     <div class="urlap">
         <?php
