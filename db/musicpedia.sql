@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2022 at 03:40 PM
+-- Generation Time: Apr 17, 2022 at 09:40 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -74,8 +74,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `registration_date`, `email`, `password`, `about`, `pfp`, `firstname`, `lastname`, `birthdate`, `privilege_level`, `favorites`, `privacy`) VALUES
-(0, '2022-04-09 13:40:35', 'admin@musicpedia.hu', '$2y$10$YVdhcB51lskhybSvIEx.NuxT/kn.oqUai2gh0sGXy3oBys4aQtUHu', 'Hello Musicpedia!', 'default.png', 'Admin', 'Fiók', '2077-04-01', 10, NULL, NULL),
-(1, '2022-04-09 13:41:39', 'user@musicpedia.hu', '$2y$10$cv0q1/qJawjxIg7OFPo/7ugH3Unln2snnyscXgFSiBEX4sGKh0yuq', 'Hello Musicpedia!', 'default.png', 'Alap', 'Felhasználó', '2001-04-01', 0, NULL, NULL),
+(0, '2022-04-09 13:40:35', 'admin@musicpedia.hu', '$2y$10$YVdhcB51lskhybSvIEx.NuxT/kn.oqUai2gh0sGXy3oBys4aQtUHu', 'Hello Musicpedia!', 'IMG_3553.png', 'Admin', 'Fiók', '2077-04-01', 10, ',Drake', NULL),
+(1, '2022-04-09 13:41:39', 'user@musicpedia.hu', '$2y$10$cv0q1/qJawjxIg7OFPo/7ugH3Unln2snnyscXgFSiBEX4sGKh0yuq', 'Hello Musicpedia!', 'default.png', 'Alap', 'Felhasználó', '2001-04-01', 0, ',Drake', NULL),
 (2, '2022-04-09 13:42:15', 'test@example.com', '$2y$10$p44lGEPEGXVQ0oQefUrjNu.eEwLqwUj/xc6FjiKFsgbCJg636wjN2', 'Hello Musicpedia!', 'default.png', 'Teszt', 'Elek', '2002-04-01', 0, NULL, NULL);
 
 --
