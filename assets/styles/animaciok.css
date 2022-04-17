@@ -9,6 +9,15 @@
 	to   { opacity: 0; }
 }
 
+@keyframes coloring {
+	0%{background-color: #BC70A4;}
+	25%{background-color: #d6cf41;}
+	50%{background-color: #9c6ab6;}
+	75%{background-color: #7a99a9;}
+	100%{background-color: #41d698;;}
+
+}
+
 /* Fő tartalom animáció */
 .kontener * {
 	animation: fadein 1.5s;

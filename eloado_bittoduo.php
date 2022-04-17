@@ -1,56 +1,37 @@
 <?php
-    include("./includes/connection.php");
+include("./includes/connection.php");
 include_once "classes/Felhasznalo.php";
 include './includes/check_auth.php';
 
 //kedvencekhez való hozzáadás és eltávolítás 1/2
-$user=$_SESSION['user'];
+$user = $_SESSION['user'];
 $performername = "Bitto Duo";
-    if(isset($_POST['Kedvenc'])) {
-        $user->addFavorite($performername);
-    }
-    if(isset($_POST['NemKedvenc'])) {
-       $user->deleteFavorite($performername);
-    }
+if (isset($_POST['Kedvenc'])) {
+    $user->addFavorite($performername);
+}
+if (isset($_POST['NemKedvenc'])) {
+    $user->deleteFavorite($performername);
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>Musicpedia</title>
-    <meta name="author" content="a gyász meg a szhenvedés"/>
-    <meta name="keywords" content="Bitto Duo"/>
-    <link rel="icon" href="assets/resources/logo.png"/>
-    <link rel="stylesheet" href="assets/styles/Eloado.css"/>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/animaciok.css"/>
-
+    <?php include './includes/head.php'; ?>
+    <link rel="stylesheet" href="./assets/styles/Eloado.css"/>
 </head>
 <body>
 <!-- Menü -->
-<nav class="navigacio">
-    <ul id="menu">
-        <li class="menuElemek">
-            <img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false"/>
-        </li>
-        <li class="menuElemek"><a href="./index.php">Főoldal</a></li>
-        <li class="menuElemek"><a href="./eloadok.php" class="active">Előadók</a></li>
-        <li class="menuElemek dropdown">
-            <a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-            <div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-        </li>
-    </ul>
-</nav>
-
-<!--aboutLipa-->
+<?php include './includes/navigation.php'; ?>
+<!-- Minden szar -->
 <main class="kontener">
     <header>
         <h2>Bitto Duo</h2>
     </header>
     <img src="assets/resources/eloadok/bittoduo0.jpg" alt="Avatar" width="350"/>
-    <p id="leiras">A szintetizátor (törzsi elnevezése "szinti") hangok elektronikus előállítására alkalmas, többnyire zenei hangszerként szolgáló
+    <p id="leiras">A szintetizátor (törzsi elnevezése "szinti") hangok elektronikus előállítására alkalmas, többnyire
+        zenei hangszerként szolgáló
         eszköz.[1] A zenei felhasználáson kívül korán felismert alkalmazási területük volt a hangeffektek előállítása
         hangmérnökök számára (pl. filmek, televíziós és színházi műsorok aláfestő hangkörnyezetének – nem csak a zene! –
         megalkotása).
@@ -67,17 +48,19 @@ $performername = "Bitto Duo";
     <!--kedvencekhez való hozzáadás és eltávolítás 2/2 -->
     <form method="POST">
         <?php
-        if($user->isfavorite("Bitto Duo")==0){?>
-            <input type="submit" name="Kedvenc" value="Kedvencekhez Adom" />
+        if ($user->isfavorite("Bitto Duo") == 0){
+        ?>
+        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom"/>
     </form>
 
-    <?php }else{?>
+    <?php } else {
+        ?>
         <form method="POST">
-            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül" />
+            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül"/>
         </form>
 
     <?php }
-        ?>
+    ?>
 
     <button class="collapsible">Hajnalba megyek megint haza</button>
     <div class="content">
@@ -346,11 +329,8 @@ $performername = "Bitto Duo";
     <br>
 </main>
 <!-- Lábjegyzet vagy mi -->
-<footer>
-    <p>Musicpedia &copy; 2022</p>
-</footer>
+<?php include './includes/footer.php'; ?>
 <!-- Szkriptek -->
-<script src="./assets/scripts/auth.check.js" defer></script>
 <script src="assets/scripts/eloado.js"></script>
 </body>
 </html>

@@ -9,6 +9,10 @@
         <li class="menuElemek"><a href="./eloadok.php"
                                   class="<?php echo ($_SERVER['REQUEST_URI'] == '/eloadok.php') ? 'active' : '' ?>">Előadók</a>
         </li>
+        </li>
+        <li class="menuElemek"><a href="./userlist.php"
+                                  class="<?php echo ($_SERVER['REQUEST_URI'] == '/eloadok.php') ? 'active' : '' ?>">Felhasználók</a>
+        </li>
         <li class="menuElemek dropdown">
             <a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
             <div class="dropdown-content">

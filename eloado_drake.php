@@ -3,12 +3,12 @@ include("./includes/connection.php");
 include_once "classes/Felhasznalo.php";
 include './includes/check_auth.php';
 
-$user=$_SESSION['user'];
+$user = $_SESSION['user'];
 $performername = "Drake";
-if(isset($_POST['Kedvenc'])) {
+if (isset($_POST['Kedvenc'])) {
     $user->addFavorite($performername);
 }
-if(isset($_POST['NemKedvenc'])) {
+if (isset($_POST['NemKedvenc'])) {
     $user->deleteFavorite($performername);
 }
 
@@ -17,33 +17,13 @@ if(isset($_POST['NemKedvenc'])) {
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>Musicpedia</title>
-    <meta name="author" content="a gyász meg a szhenvedés"/>
-    <meta name="keywords" content="Drake"/>
-    <link rel="icon" href="assets/resources/logo.png"/>
-    <link rel="stylesheet" href="assets/styles/Eloado.css"/>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/animaciok.css"/>
-
+    <?php include './includes/head.php'; ?>
+    <link rel="stylesheet" href="./assets/styles/Eloado.css"/>
 </head>
 <body>
 <!-- Menü -->
-<nav class="navigacio">
-    <ul id="menu">
-        <li class="menuElemek">
-            <img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false"/>
-        </li>
-        <li class="menuElemek"><a href="./index.php">Főoldal</a></li>
-        <li class="menuElemek"><a href="./eloadok.php" class="active">Előadók</a></li>
-        <li class="menuElemek dropdown">
-            <a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-            <div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-        </li>
-    </ul>
-</nav>
-
-<!--aboutLipa-->
+<?php include './includes/navigation.php'; ?>
+<!-- Minden szar -->
 <main class="kontener">
     <header>
         <h2>Drake</h2>
@@ -63,13 +43,15 @@ if(isset($_POST['NemKedvenc'])) {
         Sean, Kanye West (Blessings) Lil Wayne, Chris Brown, valamint Nicki Minaj (Only).</p>
     <form method="POST">
         <?php
-        if($user->isfavorite("Drake")==0){?>
-        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom" />
+        if ($user->isfavorite("Drake") == 0){
+        ?>
+        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom"/>
     </form>
 
-    <?php }else{?>
+    <?php } else {
+        ?>
         <form method="POST">
-            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül" />
+            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül"/>
         </form>
 
     <?php }
@@ -580,11 +562,8 @@ if(isset($_POST['NemKedvenc'])) {
     <br>
 </main>
 <!-- Lábjegyzet vagy mi -->
-<footer>
-    <p>Musicpedia &copy; 2022</p>
-</footer>
+<?php include './includes/footer.php'; ?>
 <!-- Szkriptek -->
-<script src="./assets/scripts/auth.check.js" defer></script>
 <script src="assets/scripts/eloado.js"></script>
 </body>
 </html>

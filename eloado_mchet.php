@@ -3,12 +3,12 @@ include("./includes/connection.php");
 include_once "classes/Felhasznalo.php";
 include './includes/check_auth.php';
 
-$user=$_SESSION['user'];
+$user = $_SESSION['user'];
 $performername = "Mc Hawer és tekknő";
-if(isset($_POST['Kedvenc'])) {
+if (isset($_POST['Kedvenc'])) {
     $user->addFavorite($performername);
 }
-if(isset($_POST['NemKedvenc'])) {
+if (isset($_POST['NemKedvenc'])) {
     $user->deleteFavorite($performername);
 }
 
@@ -16,51 +16,47 @@ if(isset($_POST['NemKedvenc'])) {
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>Musicpedia</title>
-    <meta name="author" content="a gyász meg a szhenvedés"/>
-    <meta name="keywords" content="MC Hawer és Tekknő"/>
-    <link rel="icon" href="assets/resources/logo.png"/>
-    <link rel="stylesheet" href="assets/styles/Eloado.css"/>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/animaciok.css"/>
-
+    <?php include './includes/head.php'; ?>
+    <link rel="stylesheet" href="./assets/styles/Eloado.css"/>
 </head>
 <body>
 <!-- Menü -->
-<nav class="navigacio">
-    <ul id="menu">
-        <li class="menuElemek">
-            <img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false"/>
-        </li>
-        <li class="menuElemek"><a href="./index.php">Főoldal</a></li>
-        <li class="menuElemek"><a href="./eloadok.php" class="active">Előadók</a></li>
-        <li class="menuElemek dropdown">
-            <a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-            <div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-        </li>
-    </ul>
-</nav>
-
-<!--aboutLipa-->
+<?php include './includes/navigation.php'; ?>
+<!-- Minden szar -->
 <main class="kontener">
     <header>
         <h2>MC Hawer és Tekknő</h2>
     </header>
     <img src="assets/resources/eloadok/mchawerestekno0.jpg" alt="Avatar" width="350"/>
-    <p id="leiras">MC Hawer és Tekknő egy magyar mulatós popzenét játszó könnyűzenei duó. Benyó Miklós 1971. nyarán született Budapesten. Finommechanikai műszerész szakon végzett. Jókedvében mulatósan kezdte énekelni a Jaj, de jó, jaj, de finom kezdetű nótát. Ekkor támadt az ötletük, hogy roma zenészekkel és népi hangszerekkel próbálják meg. 1995-ben Rétfalvi Attilával megalakították a Tekknő együttest, a mulatós techno első hazai képviselőjeként. Jó barátságba került MC Hawerrel, aki felvetette, hogy próbálják meg együtt. Koczka Géza 1965-ben, Budapesten született. Az általános iskola elvégzése után, másfél évig egy szakközépiskolába járt. Az ezt követő kilenc évben volt távirat-kézbesítő, gépkocsivezető, sorkatona, traktoros, segédmunkás, gyermekfotó-üzletkötő. 1993-ban elköltözött Szombathelyre, hogy az ottani piacot is kiaknázza, de 1995-től más munkát keresett. Közben egy-két báli zenekarban is dobolt, és azt tapasztalta, hogy a vidéki fiatalok jól szórakoznak a mulatós nótákra. Ekkor támadt az az ötlete, hogy meg kellene próbálni „frissíteni” ezeket a dalokat. 1995-ben Technóták 1. című hanganyaggal jelentkezettk egy szombathelyi magánkiadónál, de nem váltotta be a hozzá fűzött reményeket, mert korszerűtlen volt a hangszerelése. Újra próbálkozott Szabó Péter szintetizátorossal, aki a Bye bye, lány című lemezig a zenei alapokat készítette.Új lemezük már egy komolyabb hangtechnikával rendelkező kiadónál jelent meg 2000 februárjában Bye, bye, lány címmel. Decemberre aranylemez, 2002 júniusára pedig platinalemez lett belőle.
-        2013 őszén többszöri nekifutásra megszabadult súlyos alkoholfüggőségétől, három évvel később a cigarettát is sikerült letennie. Szeret utazni, kedvenc sportja a kerékpározás, nyaranta sok időt tölt el a Velencei-tó körül.
+    <p id="leiras">MC Hawer és Tekknő egy magyar mulatós popzenét játszó könnyűzenei duó. Benyó Miklós 1971. nyarán
+        született Budapesten. Finommechanikai műszerész szakon végzett. Jókedvében mulatósan kezdte énekelni a Jaj, de
+        jó, jaj, de finom kezdetű nótát. Ekkor támadt az ötletük, hogy roma zenészekkel és népi hangszerekkel próbálják
+        meg. 1995-ben Rétfalvi Attilával megalakították a Tekknő együttest, a mulatós techno első hazai képviselőjeként.
+        Jó barátságba került MC Hawerrel, aki felvetette, hogy próbálják meg együtt. Koczka Géza 1965-ben, Budapesten
+        született. Az általános iskola elvégzése után, másfél évig egy szakközépiskolába járt. Az ezt követő kilenc
+        évben volt távirat-kézbesítő, gépkocsivezető, sorkatona, traktoros, segédmunkás, gyermekfotó-üzletkötő. 1993-ban
+        elköltözött Szombathelyre, hogy az ottani piacot is kiaknázza, de 1995-től más munkát keresett. Közben egy-két
+        báli zenekarban is dobolt, és azt tapasztalta, hogy a vidéki fiatalok jól szórakoznak a mulatós nótákra. Ekkor
+        támadt az az ötlete, hogy meg kellene próbálni „frissíteni” ezeket a dalokat. 1995-ben Technóták 1. című
+        hanganyaggal jelentkezettk egy szombathelyi magánkiadónál, de nem váltotta be a hozzá fűzött reményeket, mert
+        korszerűtlen volt a hangszerelése. Újra próbálkozott Szabó Péter szintetizátorossal, aki a Bye bye, lány című
+        lemezig a zenei alapokat készítette.Új lemezük már egy komolyabb hangtechnikával rendelkező kiadónál jelent meg
+        2000 februárjában Bye, bye, lány címmel. Decemberre aranylemez, 2002 júniusára pedig platinalemez lett belőle.
+        2013 őszén többszöri nekifutásra megszabadult súlyos alkoholfüggőségétől, három évvel később a cigarettát is
+        sikerült letennie. Szeret utazni, kedvenc sportja a kerékpározás, nyaranta sok időt tölt el a Velencei-tó körül.
         2015-ben megjelent 'Mámor' című daluk, videóklippel.
         2016 nyarán megjelent az Ismerős Arcok zenekar 'Nélküled' című számából készült feldolgozásuk.</p>
     <form method="POST">
         <?php
-        if($user->isfavorite("Mc Hawer és tekknő")==0){?>
-        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom" />
+        if ($user->isfavorite("Mc Hawer és tekknő") == 0){
+        ?>
+        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom"/>
     </form>
 
-    <?php }else{?>
+    <?php } else {
+        ?>
         <form method="POST">
-            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül" />
+            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül"/>
         </form>
 
     <?php }
@@ -130,7 +126,9 @@ if(isset($_POST['NemKedvenc'])) {
     The boy doesn't like a friendly dress either,
     Jogging is replaced by a wedding dress.
     </pre>
-        <iframe class="video" src="https://www.youtube.com/embed/jRo2aFxY9PQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/jRo2aFxY9PQ" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
     </div>
     <button class="collapsible">Piros volt a paradicsom</button>
     <div class="content">
@@ -207,7 +205,9 @@ if(isset($_POST['NemKedvenc'])) {
         Unbutton the front of the silk shirt. :]
     </pre>
 
-        <iframe class="video" src="https://www.youtube.com/embed/IwG3p7Oo5GU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/IwG3p7Oo5GU" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
     </div>
     <button class="collapsible">Bye-bye lány</button>
     <div class="content">
@@ -252,18 +252,17 @@ if(isset($_POST['NemKedvenc'])) {
     Your memory lives in me, I don't forget, because I only remember the beautiful, my hand
     I give it to you, but I can't reach you, grief, but who cares?
     </pre>
-        <iframe class="video" src="https://www.youtube.com/embed/R-7FqBeoN-0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/R-7FqBeoN-0" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
     </div>
     <br>
     <br>
     <br>
 </main>
 <!-- Lábjegyzet vagy mi -->
-<footer>
-    <p>Musicpedia &copy; 2022</p>
-</footer>
+<?php include './includes/footer.php'; ?>
 <!-- Szkriptek -->
-<script src="./assets/scripts/auth.check.js" defer></script>
 <script src="assets/scripts/eloado.js"></script>
 </body>
 </html>

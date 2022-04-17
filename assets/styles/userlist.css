@@ -1,0 +1,41 @@
+.kontener{
+    padding-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.pfp{
+    border-radius: 50%;
+    width: 220px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.user{
+    border-radius: 10%;
+    background-color: #424242;
+    color: white;
+    width: 420px;
+    float: left;
+    margin: 20px;
+    padding: 0px;
+}
+
+.name{
+    font: bold 25px 'Century Gothic';
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #131313;
+}
+
+.in{
+    border-radius: 20px;
+    background-color: #5690ab;
+    color: white;
+    width: 400px;
+    font: 16px 'Calibri Light';
+    display: block;
+    margin: auto;
+
+}

@@ -1,0 +1,117 @@
+#pfp {
+    height: 50%;
+    height: 50%;
+    margin-left: 1%;
+    margin-right: 3%;
+    float: left;
+    border-radius: 50%;
+}
+
+#infos{
+    float: left;
+}
+
+h1 {
+    font: bold 40px "Century Gothic";
+    color: #424242;
+    margin-left: 1%;
+}
+h3 {
+    font: bold 25px "Century Gothic";
+    color: #424242;
+    margin-bottom: 0px;
+}
+
+table {
+    width: 30vw;
+    border-radius: 6px;
+}
+th {
+    text-align: center;
+    background-color: #7dbad7;
+    color: #fefefe;
+    font: 20px "Calibri Light";
+}
+td {
+    font-weight: 600;
+    text-align: center;
+    color: #5690ab;
+    font: 20px "Calibri Light";
+}
+th, td {
+    padding: 4px;
+}
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+
+/* Form */
+label {
+    color: #fefefe;
+    margin-bottom: 7px;
+}
+
+form {
+    float: right;
+    margin-right:5%;
+    width: 400px;
+    padding: 20px 10px;
+    background-color: #7dbad7;
+    border-radius: 6px;
+
+}
+.auth-header {
+    color: #fefefe;
+    text-align: center;
+    font-size: 25px;
+    margin: 4px;
+}
+
+/* Form gombok */
+input:focus {
+    background-color: hsla(199, 100%, 40%, 1);
+    border: 2px solid #fefefe;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+input[type="submit"] {
+    margin-top: 3px;
+    margin-bottom: 15px;
+    width: 45%;
+    text-align: center;
+    display: inline-block;
+
+}
+
+input {
+    width: 90%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 6px;
+    border-bottom: 2px solid hsla(199, 100%, 40%, 1);
+    border-top: none;
+    border-left: none;
+    border: none;
+    color: hsla(0, 0%, 100%, 1);
+    background: rgba(20, 20, 20, 0.2);
+    outline: none;
+}
+
+table.singers {
+    top: 70%;
+}
+
+input[type="submit"]:hover {
+    background-color: hsla(199, 100%, 40%, 1);
+}
+input[type="submit"]:active {
+    background-color: hsla(199, 100%, 60%, 1);
+    border-color: hsla(199, 100%, 60%, 1);
+}

@@ -1,4 +1,6 @@
 <?php
+include_once "classes/Felhasznalo.php";
+$user=null;
 session_start();
 session_unset();
 session_destroy();

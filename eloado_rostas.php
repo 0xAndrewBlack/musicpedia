@@ -3,12 +3,12 @@ include("./includes/connection.php");
 include_once "classes/Felhasznalo.php";
 include './includes/check_auth.php';
 
-$user=$_SESSION['user'];
+$user = $_SESSION['user'];
 $performername = "Rostas Szabika";
-if(isset($_POST['Kedvenc'])) {
+if (isset($_POST['Kedvenc'])) {
     $user->addFavorite($performername);
 }
-if(isset($_POST['NemKedvenc'])) {
+if (isset($_POST['NemKedvenc'])) {
     $user->deleteFavorite($performername);
 }
 
@@ -17,31 +17,12 @@ if(isset($_POST['NemKedvenc'])) {
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>Musicpedia</title>
-    <meta name="author" content="a gyász meg a szhenvedés"/>
-    <meta name="keywords" content="Rostás Szabika, Te vagy a tavasz, Függőséget okoztál, Csepereg az eső"/>
-    <link rel="icon" href="assets/resources/logo.png"/>
+    <?php include './includes/head.php'; ?>
     <link rel="stylesheet" href="./assets/styles/Eloado.css"/>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/eloadok.css"/>
-    <link rel="stylesheet" href="./assets/styles/animaciok.css"/>
 </head>
 <body>
 <!-- Menü -->
-<nav class="navigacio">
-    <ul id="menu">
-        <li class="menuElemek">
-            <img id="logo" alt="Musicpedia logo" src="./assets/resources/logo.png" height="60" draggable="false"/>
-        </li>
-        <li class="menuElemek"><a href="./index.php">Főoldal</a></li>
-        <li class="menuElemek"><a href="./eloadok.php" class="active">Előadók</a></li>
-        <li class="menuElemek dropdown">
-            <a id="profilom" href="javascript:void(0)" class="dropbtn">Profilom</a>
-            <div class="dropdown-content"><!-- Ide betöltődik majd a navigáció --></div>
-        </li>
-    </ul>
-</nav>
+<?php include './includes/navigation.php'; ?>
 <!-- Minden szar -->
 <main class="kontener">
     <header>
@@ -58,17 +39,20 @@ if(isset($_POST['NemKedvenc'])) {
         rengeteg helyen játszották, szórakozóhelyektől kezdve iskolai ballagásokig, sőt egy videó erejéig még Cara
         Delevingne is közreműködött.
         A szám akkora sikert hozott, hogy a Művész Úr korábbi dalai is reneszánszukat éli.
-        <strong>Kiemelkedőbb zeneszámai: Hogyha Ugatnak a Kutyák, Vettem a Piacon, Nincs már divatban, Eljárok az Alvilágba 2020
-            Cover, Függőséget Okoztál (Cover) Audio 2020, Te vagy a tavasz (Cover).</strong> </p>
+        <strong>Kiemelkedőbb zeneszámai: Hogyha Ugatnak a Kutyák, Vettem a Piacon, Nincs már divatban, Eljárok az
+            Alvilágba 2020
+            Cover, Függőséget Okoztál (Cover) Audio 2020, Te vagy a tavasz (Cover).</strong></p>
     <form method="POST">
         <?php
-        if($user->isfavorite("Rostas Szabika")==0){?>
-        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom" />
+        if ($user->isfavorite("Rostas Szabika") == 0){
+        ?>
+        <input type="submit" name="Kedvenc" value="Kedvencekhez Adom"/>
     </form>
 
-    <?php }else{?>
+    <?php } else {
+        ?>
         <form method="POST">
-            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül" />
+            <input type="submit" name="NemKedvenc" value="Törlés a kedvencek közül"/>
         </form>
 
     <?php }
@@ -188,7 +172,9 @@ if(isset($_POST['NemKedvenc'])) {
         Well, jump into the Tisza!
     </pre>
 
-        <iframe class="video" src="https://www.youtube.com/embed/yRmHNQhlLKU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video" src="https://www.youtube.com/embed/yRmHNQhlLKU" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
     </div>
     <button class="collapsible">Nincs már divatban</button>
     <div class="content">
@@ -266,11 +252,8 @@ if(isset($_POST['NemKedvenc'])) {
     <br>
 </main>
 <!-- Lábjegyzet vagy mi -->
-<footer>
-    <p>Musicpedia &copy; 2022</p>
-</footer>
+<?php include './includes/footer.php'; ?>
 <!-- Szkriptek -->
-<script src="./assets/scripts/auth.check.js" defer></script>
 <script src="assets/scripts/eloado.js"></script>
 </body>
 </html>

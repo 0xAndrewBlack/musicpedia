@@ -15,30 +15,32 @@
 			<div class="urlap">
 			<?php
 					include("./includes/connection.php");
-
+                    include("./classes/Felhasznalo.php");
 					if (isset($_POST["login"])) {
 						$email = $_POST["mail"];
 
 						$password = $_POST["password"];
 
-                        if ($stmt = $conn->prepare("SELECT id, password, privilege_level, firstname, CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
+                        if ($stmt = $conn->prepare("SELECT * , CONCAT(firstname, ' ', lastname) AS name FROM users WHERE email = ?")) {
 							$stmt->bind_param('s', $email);
 							$stmt->execute();
 							$stmt->store_result();
 
 							if ($stmt->num_rows > 0) {
-								$stmt->bind_result($id, $password_stored, $privilege_level, $firstname, $name);
+								$stmt->bind_result($id, $registration_date, $email, $password_stored, $about, $pfp, $firstname, $lastname, $birthdate, $privilege_level, $name, $favorites,$privacy);
 								$stmt->fetch();
 
 								if (password_verify($password, $password_stored)) {
 									$lifetime = 3600;
 									session_start();
 
+                                    $user=new Felhasznalo($id, $email, $password, $firstname, $lastname, $birthdate, $registration_date, $about, $pfp);
 									$_SESSION['loggedin'] = TRUE;
                                     $_SESSION['isadmin'] = $privilege_level  == 10;
 									$_SESSION['firstname'] = $firstname;
 									$_SESSION['name'] = $name;
 									$_SESSION['id'] = $id;
+                                    $_SESSION['user'] = $user;
 
 									setcookie(session_name(), session_id(), time()+$lifetime);
 									session_regenerate_id();
