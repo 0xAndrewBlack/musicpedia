@@ -16,7 +16,7 @@ $user = $_SESSION['user'];
 <?php include './includes/navigation.php'; ?>
 <!-- Minden szar -->
 <main class="kontener">
-    <h1><?php echo $user->getLastname(); ?><?php echo $user->getFirstname(); ?></h1>
+    <h1><?php echo $user->getLastname(); ?> <?php echo $user->getFirstname(); ?></h1>
 
     <img id="pfp" src="assets/public/user-pfps/<?php echo $user->getPfp(); ?>" alt="Profilkép">
 
